@@ -5,15 +5,19 @@ namespace Test.Tests
     [TestFixture]
     public class FizzBazzTests
     {
+        private FizzBazz _fizzBazz;
+        [SetUp]
+        public void SetUp()
+        {
+            //arrange
+            _fizzBazz = new FizzBazz();
+        }
 
         [Test]
         public void GetOutPut_InputIsDividedBy3And5_ReturnFizBazz()
         {
-            //arrange
-            var fizBazz = new FizzBazz();
-
             //act
-            var result = fizBazz.GetOutPut(15);
+            var result = _fizzBazz.GetOutPut(15);
 
             //assert
             Assert.That(result == "FizzBazz");
@@ -22,11 +26,8 @@ namespace Test.Tests
         [Test]
         public void GetOutPut_InputIsDividedBy3_ReturnFizz()
         {
-            //arrange
-            var fizBazz = new FizzBazz();
-
             //act
-            var result = fizBazz.GetOutPut(3);
+            var result = _fizzBazz.GetOutPut(3);
 
             //assert
             Assert.That(result == "Fizz");
@@ -35,11 +36,8 @@ namespace Test.Tests
         [Test]
         public void GetOutPut_InputIsDividedBy5_ReturnBazz()
         {
-            //arrange
-            var fizBazz = new FizzBazz();
-
             //act
-            var result = fizBazz.GetOutPut(5);
+            var result = _fizzBazz.GetOutPut(5);
 
             //assert
             Assert.That(result == "Bazz");
@@ -48,11 +46,8 @@ namespace Test.Tests
         [Test]
         public void GetOutPut_InputIsNotDividedThan3Or5_ReturnSameNumber()
         {
-            //arrange
-            var fizBazz = new FizzBazz();
-
             //act
-            var result = fizBazz.GetOutPut(1);
+            var result = _fizzBazz.GetOutPut(1);
 
             //assert
             Assert.That(result == "1");
