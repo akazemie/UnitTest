@@ -2,6 +2,8 @@
 {
     public class DemeritPointsCalculator
     {
+        private const int speedLimit = 65;
+
         /// <summary>
         /// speed is negative throw ArgumentOutofRangeException
         /// speed is less than 65 and positive return 0
@@ -15,7 +17,12 @@
             if (speed < 0)
                 throw new ArgumentOutOfRangeException();
 
-            return 0;
+            if (speed <= speedLimit) return 0;
+
+            const int kmPerDemeritPoint = 5;
+            var demeritPoints = (speed - speedLimit) / kmPerDemeritPoint;
+
+            return demeritPoints;
         }
     }
 }
