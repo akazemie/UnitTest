@@ -37,5 +37,13 @@ namespace Test.Tests
             //Assert
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void CalculateDemeritPoints_SpeedIsMoreThan400_ArgumentOutofRangeException()
+        {
+            //Assert
+            Assert.That(() => _demeritPoints.CalculateDemeritPoints(401),
+                Throws.Exception.TypeOf<ArgumentOutOfRangeException>());
+        }
     }
 }

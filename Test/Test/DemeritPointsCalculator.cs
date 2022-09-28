@@ -3,6 +3,7 @@
     public class DemeritPointsCalculator
     {
         private const int speedLimit = 65;
+        private const int speedMax = 400;
 
         /// <summary>
         /// speed is negative throw ArgumentOutofRangeException
@@ -14,7 +15,7 @@
         /// <returns></returns>
         public int CalculateDemeritPoints(int speed)
         {
-            if (speed < 0)
+            if (speed < 0 || speed > speedMax)
                 throw new ArgumentOutOfRangeException();
 
             if (speed <= speedLimit) return 0;
