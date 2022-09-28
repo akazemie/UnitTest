@@ -8,5 +8,9 @@
     /// </summary>
     public class FizzBazz
     {
+        public string GetOutPut(int num)
+        {
+            return "";
+        }
     }
 }
