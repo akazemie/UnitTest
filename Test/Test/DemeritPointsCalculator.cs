@@ -12,6 +12,9 @@
         /// <returns></returns>
         public int CalculateDemeritPoints(int speed)
         {
+            if (speed < 0)
+                throw new ArgumentOutOfRangeException();
+
             return 0;
         }
     }
