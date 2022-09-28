@@ -10,7 +10,16 @@
     {
         public string GetOutPut(int num)
         {
-            return "";
+            if (((num % 3) == 0) && (num % 5) == 0)
+                return "FizzBazz";
+
+            if (((num % 3) == 0))
+                return "Fizz";
+
+            if (((num % 5) == 0))
+                return "Bazz";
+
+            return num.ToString();
         }
     }
 }
